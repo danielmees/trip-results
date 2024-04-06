@@ -42,3 +42,5 @@ export type TripSet = Trip[];
 export interface TripsData {
   tripSet: TripSet;
 }
+
+export type CompareDatesFormat = "closestFirst" | "furthestFirst";
