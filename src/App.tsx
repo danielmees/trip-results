@@ -22,8 +22,7 @@ function App() {
 
       if (tripsData) {
         setTripsData(tripsData);
-        const tripsToShow = sortTrips(tripsData.tripSet, "closestFirst");
-        setTripsToShow(tripsToShow);
+        setTripsToShow(sortTrips(tripsData.tripSet, "closestFirst"));
       }
     })();
   }, []);
@@ -33,12 +32,13 @@ function App() {
       return compareDates(a.checkInDate, b.checkInDate, format) ? 1 : -1;
     });
 
-  if (!tripsData)
+  if (!tripsData) {
     return (
       <div>
         <header>Loading..., please wait.</header>
       </div>
     );
+  }
 
   const revertSorting = () => {
     const newKey =

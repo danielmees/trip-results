@@ -17,10 +17,10 @@ export interface Trip {
   numberOfDays: number;
   curatedTripMasterInventoryId: number;
   unitName: string;
-  unitID: string;
+  unitID: number;
   unitSourceID: number;
   rid: string;
-  unitParentCategoryID: string;
+  unitParentCategoryID: number;
   parentCategoryName: string;
   propertyID: number;
   propertyName: string | null;
@@ -32,7 +32,7 @@ export interface Trip {
   unitStyleName: UnitStyle;
   coverImage: string;
   bedrooms: number;
-  bathrooms: number;
+  bathrooms: string;
   occupancy: number;
   squareFootage: number;
   umbracoNodeID: number;
