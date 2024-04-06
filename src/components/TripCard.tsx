@@ -11,7 +11,7 @@ const TripCard = ({
   const checkInDateAU = convertISODate(checkInDate);
 
   return (
-    <div className="trip-card">
+    <div className="trip-card" data-testid={`tripcard-${unitName}`}>
       <img
         src={`https://cms.inspirato.com/ImageGen.ashx?image=${heroImage}&width=500`}
         alt="hero"

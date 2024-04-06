@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { fetchData } from "./api/fetchData";
+import axios from "axios";
 import TripCard from "./components/TripCard";
 import Selector from "./components/Selector";
 import {
@@ -18,11 +18,15 @@ function App() {
 
   useEffect(() => {
     (async () => {
-      const tripsData = await fetchData("http://localhost:3000/trips.json");
+      try {
+        const response = await axios.get("http://localhost:3000/trips.json");
 
-      if (tripsData) {
-        setTripsData(tripsData);
-        setTripsToShow(sortTrips(tripsData.tripSet, "closestFirst"));
+        if (response.data) {
+          setTripsData(response.data);
+          setTripsToShow(sortTrips(response.data.tripSet, "closestFirst"));
+        }
+      } catch {
+        console.error();
       }
     })();
   }, []);
