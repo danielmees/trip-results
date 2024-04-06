@@ -33,22 +33,30 @@ function App() {
       return compareDates(a.checkInDate, b.checkInDate, format) ? 1 : -1;
     });
 
-  if (!tripsData) return null;
+  if (!tripsData)
+    return (
+      <div>
+        <header>Loading..., please wait.</header>
+      </div>
+    );
 
   const revertSorting = () => {
     const newKey =
       sortKey === "closestFirst" ? "furthestFirst" : "closestFirst";
     setSortKey(newKey);
-    const newTripsToShow = sortTrips(tripsToShow, newKey);
-    setTripsToShow(newTripsToShow);
+    setTripsToShow(sortTrips(tripsToShow, newKey));
   };
 
   const handleSelectChange = (value: UnitStyle) => {
+    if (value === "All Vacations") {
+      setTripsToShow(sortTrips(tripsData.tripSet, sortKey));
+      return;
+    }
+
     const filteredTrips = tripsData.tripSet.filter(
       (trip) => value === trip.unitStyleName
     );
-    const newTripsToShow = sortTrips(filteredTrips, sortKey);
-    setTripsToShow(newTripsToShow);
+    setTripsToShow(sortTrips(filteredTrips, sortKey));
   };
 
   const renderSelector = () => {
