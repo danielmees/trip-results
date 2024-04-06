@@ -1,3 +1,18 @@
-.App {
-  text-align: center;
+.trip-results {
+  padding: 100px 60px;
+  background-color: #f6f5f7;
+
+  header {
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
 }
