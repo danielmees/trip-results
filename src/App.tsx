@@ -58,7 +58,7 @@ function App() {
   };
 
   return (
-    <div className="trip-results">
+    <div>
       <header>Trip Results</header>
       <section>
         <div className="actions-container">
