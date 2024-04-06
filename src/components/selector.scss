@@ -1,0 +1,14 @@
+.selector-container {
+  select {
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #e9ebf0;
+    border: none;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

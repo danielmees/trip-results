@@ -18,7 +18,7 @@ const TripCard = ({
       />
       <div>
         <p>{unitName}</p>
-        <p>{unitStyleName}</p>
+        <p>Unit style: {unitStyleName}</p>
         <p>Check in date: {checkInDateAU}</p>
       </div>
     </div>

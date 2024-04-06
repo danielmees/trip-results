@@ -1,3 +1,12 @@
+export type UnitStyle =
+  | "All Vacations"
+  | "Beach"
+  | "Lifestyle"
+  | "Metropolitan"
+  | "Mountain";
+
+export type UnitStyles = Record<string, UnitStyle>;
+
 export interface Trip {
   curatedTripSetId: number;
   curatedTripSetName: string;
@@ -20,7 +29,7 @@ export interface Trip {
   locationGroupID: number;
   locationGroupName: string;
   unitStyleID: number;
-  unitStyleName: string;
+  unitStyleName: UnitStyle;
   coverImage: string;
   bedrooms: number;
   bathrooms: number;
@@ -41,6 +50,7 @@ export type TripSet = Trip[];
 
 export interface TripsData {
   tripSet: TripSet;
+  styles: UnitStyles;
 }
 
 export type CompareDatesFormat = "closestFirst" | "furthestFirst";
