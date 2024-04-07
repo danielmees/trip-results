@@ -54,20 +54,21 @@ describe("App", () => {
     const updatedTripCards = screen.getAllByTestId("tripcard", {
       exact: false,
     });
+
     expect(updatedTripCards.length).toBe(3);
-    expect(tripCards[0].textContent).toContain("Villa Palmera");
-    expect(tripCards[0].textContent).toContain("14/04/2022");
-    expect(tripCards[1].textContent).toContain("Stargazer");
-    expect(tripCards[1].textContent).toContain("16/02/2022");
-    expect(tripCards[2].textContent).toContain("Starling");
-    expect(tripCards[2].textContent).toContain("14/02/2022");
+    expect(updatedTripCards[0].textContent).toContain("Villa Palmera");
+    expect(updatedTripCards[0].textContent).toContain("14/04/2022");
+    expect(updatedTripCards[1].textContent).toContain("Stargazer");
+    expect(updatedTripCards[1].textContent).toContain("16/02/2022");
+    expect(updatedTripCards[2].textContent).toContain("Starling");
+    expect(updatedTripCards[2].textContent).toContain("14/02/2022");
 
     userEvent.click(sortButton);
-    expect(tripCards[0].textContent).toContain("Starling");
-    expect(tripCards[0].textContent).toContain("14/02/2022");
-    expect(tripCards[1].textContent).toContain("Stargazer");
-    expect(tripCards[1].textContent).toContain("16/02/2022");
-    expect(tripCards[2].textContent).toContain("Villa Palmera");
-    expect(tripCards[2].textContent).toContain("14/04/2022");
+    expect(updatedTripCards[0].textContent).toContain("Starling");
+    expect(updatedTripCards[0].textContent).toContain("14/02/2022");
+    expect(updatedTripCards[1].textContent).toContain("Stargazer");
+    expect(updatedTripCards[1].textContent).toContain("16/02/2022");
+    expect(updatedTripCards[2].textContent).toContain("Villa Palmera");
+    expect(updatedTripCards[2].textContent).toContain("14/04/2022");
   });
 });
